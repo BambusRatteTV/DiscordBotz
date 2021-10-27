@@ -12,6 +12,7 @@ on:
       include_rts: false,
       tweet_mode: "extended"
       
+      name: Deploy
       jobs:
        deploy:
         name: Deploy
