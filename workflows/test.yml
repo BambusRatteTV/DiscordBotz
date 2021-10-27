@@ -1,15 +1,12 @@
+on:
+  workflow_dispatch:
+
 jobs:
-  send-to-discord:
-    name: "Send To Discord"
-    runs-on: "ubuntu-latest"
+  message:
+    runs-on: ubuntu-latest
     steps:
-      - uses: "hugoalh/GitHubAction.SendToDiscord@v3.0.0"
-        with:
-          webhook_id: "${{secrets.DISCORD_WEBHOOK_ID}}"
-          webhook_token: "${{secrets.DISCORD_WEBHOOK_TOKEN}}"
-          variable_join: "."
-          variable_prefix: "%"
-          variable_suffix: "%"
-          message_text: "Testnachricht!!"
-          message_usetexttospeech: "false"
-    run: |
+    - name: Discord Webhook Action
+      uses: tsickert/discord-webhook@v4.0.0
+      with:
+        webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+        content: "Test"
