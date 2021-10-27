@@ -20,8 +20,5 @@ on:
          - name: discord
            uses: sebastianpopp/discord-action@releases/v1
            with:
-        webhook: ${{ secrets.DISCORD_WEBHOOK }}
-        message: Hallo @New World Gamer, hier ist etwas neues zu New World!\n\n
-                 ${{ on.twitter.outputs.full_text }}
-        run: |
-          echo text: $text
+              webhook: ${{ secrets.DISCORD_WEBHOOK }}
+              message:  "Hallo @New World Gamer, hier ist etwas neues zu New World!\n\n" ${{ on.twitter.outputs.full_text }}
