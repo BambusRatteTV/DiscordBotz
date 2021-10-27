@@ -12,14 +12,14 @@ on:
       include_rts: false,
       tweet_mode: extended,
       
-      name: Deploy
       jobs:
-       deploy:
-        name: Deploy
-        runs-on: ubuntu-latest
-        steps:
-         - name: discord-action
-           uses: sebastianpopp/discord-action@v1.0
-           with:
-              webhook: ${{ secrets.DISCORD_WEBHOOK }}
-              message:  Hallo @New World Gamer, hier ist etwas neues zu New World!\n\n ${{ on.twitter.outputs.full_text }}
+  print:
+    name: Print
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Outputs
+        env:
+          text: ${{ on.twitter.outputs.full_text }}
+        run: |
+          echo text: $text
+
