@@ -18,7 +18,7 @@ on:
         runs-on: ubuntu-latest
         steps:
          - name: discord-action
-           uses: sebastianpopp/discord-action@releases/v1
+           uses: sebastianpopp/discord-action@v1.0
            with:
               webhook: ${{ secrets.DISCORD_WEBHOOK }}
               message:  Hallo @New World Gamer, hier ist etwas neues zu New World!\n\n ${{ on.twitter.outputs.full_text }}
