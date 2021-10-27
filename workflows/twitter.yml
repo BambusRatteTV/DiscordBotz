@@ -17,7 +17,7 @@ on:
         name: Deploy
         runs-on: ubuntu-latest
         steps:
-         - name: discord
+         - name: discord-action
            uses: sebastianpopp/discord-action@releases/v1
            with:
               webhook: ${{ secrets.DISCORD_WEBHOOK }}
