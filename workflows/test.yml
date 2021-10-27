@@ -7,7 +7,7 @@ on:
       access_token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
       access_token_secret: ${{ secrets.TWITTER_ACCESS_SECRET }}
     params:
-      screen_name: twitter
+      screen_name: bambusrattetv
 jobs:
  deploy:
    name: Deploy
@@ -17,8 +17,8 @@ jobs:
      uses: sebastianpopp/discord-action@releases/v1
      with:
        webhook: ${{ secrets.DISCORD_WEBHOOK }}
-       message: ${{ github.repository }} has been successfullly deployed.
-       text: ${{ on.twitter.outputs.full_text }}       
+       text: ${{ on.twitter.outputs.full_text }}
+       message: Hallo @New World Gamer, hier sind Neuigkeiten ffür dich\n '$text'
      run: |
        echo text: $text
          
