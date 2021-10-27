@@ -19,4 +19,4 @@ send-to-discord:
         variable_join: "."
         variable_prefix: "%"
         variable_suffix: "%"
-        message_text: Hallo @New World Gamer, hier sind Neuigkeiten ffür dich\n${{on.twitter.outputs.full_text}}
+        message_text: Hallo @New World Gamer, hier sind Neuigkeiten ffür dich\n${{on.twitter.outputs.full_text}} ....
