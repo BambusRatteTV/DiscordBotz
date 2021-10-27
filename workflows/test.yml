@@ -13,8 +13,8 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-     - name: discord-action
-       uses: sebastianpopp/discord-action@releases/v1.0
+    - name: discord-action
+      uses: sebastianpopp/discord-action@v1.0
        with:
        webhook: ${{ secrets.DISCORD_WEBHOOK }}    
        text: ${{ on.twitter.outputs.full_text }}
