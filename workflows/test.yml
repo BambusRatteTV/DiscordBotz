@@ -19,5 +19,5 @@ jobs:
         webhook: ${{ secrets.DISCORD_WEBHOOK }}    
         text: ${{ on.twitter.outputs.full_text }}
         message: ${{ github.repository }} has been successfullly deployed.
-          run: |
+         run: |
           echo text: $text
