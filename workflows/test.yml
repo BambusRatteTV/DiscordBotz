@@ -1,4 +1,5 @@
-on: push
+name: Deploy
+ on: push
  twitter:
   api: statuses/user_timeline
   auth:
