@@ -1,6 +1,6 @@
 name: Deploy
- on: push
- twitter:
+on: push
+twitter:
   api: statuses/user_timeline
   auth:
    consumer_key: ${{ secrets.TWITTER_CONSUMER_KEY }}
@@ -9,7 +9,7 @@ name: Deploy
    access_token_secret: ${{ secrets.TWITTER_ACCESS_SECRET }}
   params:
     screen_name: bambusrattetv
- jobs:
+jobs:
   deploy:
    name: Deploy
    runs-on: ubuntu-latest
