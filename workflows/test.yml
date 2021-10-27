@@ -7,9 +7,9 @@ on:
       access_token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
       access_token_secret: ${{ secrets.TWITTER_ACCESS_SECRET }}
     params:
-      screen_name: gronkh
+      screen_name: twitter
  jobs:
-  deploy:
+   deploy:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
@@ -18,8 +18,7 @@ on:
       with:
         webhook: ${{ secrets.DISCORD_WEBHOOK }}
         message: ${{ github.repository }} has been successfullly deployed.
-      text: ${{ on.twitter.outputs.full_text }}
-       echo text: $text
+        text: ${{ on.twitter.outputs.full_text }}       
          run: |
-            deploy
+          echo text: $text
          
