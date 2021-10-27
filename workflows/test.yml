@@ -20,4 +20,4 @@ jobs:
       webhook: ${{ secrets.DISCORD_WEBHOOK }}
       text: ${{ on.twitter.outputs.full_text }}
       message: Hallo @New World Gamer, hier sind Neuigkeiten ffür dich\n '$text'
-       run: |
+   run: |
