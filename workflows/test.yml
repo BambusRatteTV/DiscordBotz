@@ -1,3 +1,4 @@
+on: push
 jobs:
   send-to-discord:
     name: "Send To Discord"
