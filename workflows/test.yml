@@ -10,15 +10,16 @@ on:
       screen_name: playnewworldde
 jobs:
   deploy:
+      env:
+        text: ${{ on.twitter.outputs.full_text }}
     name: Deploy
     runs-on: ubuntu-latest
-    steps: uses: sebastianpopp/discord-action@releases/v1.0
-    env:
-          text: ${{ on.twitter.outputs.full_text }}
-      - name: discord-action
-        with:
-        webhook: ${{ secrets.DISCORD_WEBHOOK }}
-        message: ${{ github.repository }} has been successfullly deployed.
+    steps:
+     - name: discord-action
+       uses: sebastianpopp/discord-action@releases/v1.0
+       with:
+       webhook: ${{ secrets.DISCORD_WEBHOOK }}        
+       message: ${{ github.repository }} has been successfullly deployed.
        
        run: |
           echo text: $text
