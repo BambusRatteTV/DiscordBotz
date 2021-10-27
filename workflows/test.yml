@@ -8,17 +8,17 @@ on:
       access_token_secret: ${{ secrets.TWITTER_ACCESS_SECRET }}
     params:
       screen_name: twitter
- jobs:
-   deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: discord-action
-      uses: sebastianpopp/discord-action@releases/v1
-      with:
-        webhook: ${{ secrets.DISCORD_WEBHOOK }}
-        message: ${{ github.repository }} has been successfullly deployed.
-        text: ${{ on.twitter.outputs.full_text }}       
-         run: |
-          echo text: $text
+jobs:
+ deploy:
+   name: Deploy
+   runs-on: ubuntu-latest
+   steps:
+   - name: discord-action
+     uses: sebastianpopp/discord-action@releases/v1
+     with:
+       webhook: ${{ secrets.DISCORD_WEBHOOK }}
+       message: ${{ github.repository }} has been successfullly deployed.
+       text: ${{ on.twitter.outputs.full_text }}       
+      run: |
+       echo text: $text
          
