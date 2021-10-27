@@ -9,12 +9,16 @@ on:
     params:
       screen_name: playnewworldde
 jobs:
-  print:
-    name: Print
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
-    steps:
-      - name: Print Outputs
-        env:
+    steps: uses: sebastianpopp/discord-action@releases/v1.0
+    env:
           text: ${{ on.twitter.outputs.full_text }}
-        run: |
+      - name: discord-action
+        with:
+        webhook: ${{ secrets.DISCORD_WEBHOOK }}
+        message: ${{ github.repository }} has been successfullly deployed.
+       
+       run: |
           echo text: $text
