@@ -1,24 +1,24 @@
 on: push
  twitter:
-    api: statuses/user_timeline
-    auth:
-      consumer_key: ${{ secrets.TWITTER_CONSUMER_KEY }}
-      consumer_secret: ${{ secrets.TWITTER_CONSUMER_SECRET }}
-      access_token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-      access_token_secret: ${{ secrets.TWITTER_ACCESS_SECRET }}
-    params:
-      screen_name: bambusrattetv
+  api: statuses/user_timeline
+  auth:
+   consumer_key: ${{ secrets.TWITTER_CONSUMER_KEY }}
+   consumer_secret: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+   access_token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+   access_token_secret: ${{ secrets.TWITTER_ACCESS_SECRET }}
+  params:
+    screen_name: bambusrattetv
  jobs:
   deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: discord-action
-      uses: sebastianpopp/discord-action@releases/v1
-      with:
-        webhook: ${{ secrets.DISCORD_WEBHOOK }}
-        text: ${{ on.twitter.outputs.full_text }}
-        message: Hallo @New World Gamer, hier sind Neuigkeiten ffür dich\n '$text'
-      run: |
-        echo text: $text
+   name: Deploy
+   runs-on: ubuntu-latest
+   steps:
+   - name: discord-action
+     uses: sebastianpopp/discord-action@releases/v1
+     with:
+      webhook: ${{ secrets.DISCORD_WEBHOOK }}
+      text: ${{ on.twitter.outputs.full_text }}
+      message: Hallo @New World Gamer, hier sind Neuigkeiten ffür dich\n '$text'
+     run: |
+      echo text: $text
          
