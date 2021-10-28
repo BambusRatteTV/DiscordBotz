@@ -12,12 +12,12 @@ on:
  send-to-discord:
   - name: Send To Discord
     uses: hugoalh/GitHubAction.SendToDiscord@v2.0.0
-  runs-on: ubuntu-latest
-  steps:
-    with:
-     webhook_id: ${{secrets.DISCORD_WEBHOOK_ID}}
-     webhook_token: ${{secrets.DISCORD_WEBHOOK_TOKEN}}
-     variable_join: "."
-     variable_prefix: "%"
-     variable_suffix: "%"
-     message_text: "Hallo @New World Gamer, hier sind Neuigkeiten ffür dich\n '${{on.twitter.outputs.full_text}}' ...."
+     runs-on: ubuntu-latest
+      steps:
+       with:
+        webhook_id: ${{secrets.DISCORD_WEBHOOK_ID}}
+        webhook_token: ${{secrets.DISCORD_WEBHOOK_TOKEN}}
+        variable_join: "."
+        variable_prefix: "%"
+        variable_suffix: "%"
+        message_text: "Hallo @New World Gamer, hier sind Neuigkeiten ffür dich\n '${{on.twitter.outputs.full_text}}' ...."
