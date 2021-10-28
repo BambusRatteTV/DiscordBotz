@@ -15,3 +15,6 @@ jobs:
           value3: ${{on.rss.outputs.link}}
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           message: "Hallo @New World Gamer, hier sind Neuigkeiten für dich\n '${{on.rss.outputs.contentSnippet}}' ...."
+        run: |
+          echo "Test bestanden?"
+          echo "Hallo @New World Gamer, hier sind Neuigkeiten für dich\n '${{on.rss.outputs.contentSnippet}}' ...."
