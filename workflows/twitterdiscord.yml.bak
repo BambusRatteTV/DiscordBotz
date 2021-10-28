@@ -8,15 +8,21 @@ on:
    access_token_secret: ${{ secrets.TWITTER_ACCESS_SECRET }}
   params:
     screen_name: playnewworldde
+    exclude_replies: true,
+    include_rts: false,
+    tweet_mode: extended,
 
- send-to-discord:
-  - name: Send To Discord
-    uses: hugoalh/GitHubAction.SendToDiscord@v2.0.0
-  steps:
-    with:
-     webhook_id: ${{secrets.DISCORD_WEBHOOK_ID}}
-     webhook_token: ${{secrets.DISCORD_WEBHOOK_TOKEN}}
-     variable_join: "."
-     variable_prefix: "%"
-     variable_suffix: "%"
-     message_text: "Hallo @New World Gamer, hier sind Neuigkeiten ffür dich\n '${{on.twitter.outputs.full_text}}' ...."
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: discord-action
+        uses: sebastianpopp/discord-action@v1.0
+        with:
+          event: notice
+          value1: ${{on.rss.outputs.title}}
+          value2: ${{on.rss.outputs.contentSnippet}}
+          value3: ${{on.rss.outputs.link}}
+          webhook: ${{secrets.DISCORD_WEBHOOK}}
+          message: "Hallo @New World Gamer, hier sind Neuigkeiten für dich\n\n${{on.twitter.outputs.full_text}}\n\nQuelle: Twitter.com by <a href=\"https://twitter.com/${{on.twitter.outputs.screen_name}}\" rel=\"nofollow\">@${{on.twitter.outputs.screen_name}}</a>\nPosted: ${{on.twitter.outputs.created_at}}"
