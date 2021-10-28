@@ -17,4 +17,4 @@ jobs:
           value2: ${{on.rss.outputs.contentSnippet}}
           value3: ${{on.rss.outputs.link}}
           webhook: ${{secrets.DISCORD_WEBHOOK}}
-          message: "Hallo <@591552745123872768>, hier sind Neuigkeiten für dich\n\n${{on.rss.outputs.contentSnippet}}\n"
+          message: "Hallo \@New World Gamer, hier sind Neuigkeiten für dich\n\n${{on.rss.outputs.contentSnippet}}\n"
