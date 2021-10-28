@@ -9,15 +9,10 @@ on:
   params:
     screen_name: playnewworldde
 
- send-to-discord:
-  name: Send To Discord
-  runs-on: ubuntu-latest
-  steps:
-    - uses: hugoalh/GitHubAction.SendToDiscord@v2.0.0
-      with:
-        webhook_id: ${{secrets.DISCORD_WEBHOOK_ID}}
-        webhook_token: ${{secrets.DISCORD_WEBHOOK_TOKEN}}
-        variable_join: "."
-        variable_prefix: "%"
-        variable_suffix: "%"
-        message_text: "Hallo @New World Gamer, hier sind Neuigkeiten ffür dich\n'${{on.twitter.outputs.full_text}}' ...."
+ 
+- name: send message
+  uses: appleboy/discord-action@master
+  with:
+    webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
+    webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
+    message: The event triggered first step. Hier könnte aber auch was anderes stehen :(
