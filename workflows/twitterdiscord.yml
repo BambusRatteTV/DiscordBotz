@@ -10,7 +10,6 @@ on:
     screen_name: playnewworldde
     exclude_replies: true,
     include_rts: false,
-    tweet_mode: extended,
 
 jobs:
   deploy:
@@ -22,4 +21,4 @@ jobs:
         with:
           event: notice
           webhook: ${{secrets.DISCORD_WEBHOOK}}
-          message: "Hallo @New World Gamer, hier sind Neuigkeiten für dich\n\n${{on.twitter.outputs.full_text}}\n\nQuelle: Twitter.com by <a href=\"https://twitter.com/${{on.twitter.outputs.screen_name}}\" rel=\"nofollow\">@${{on.twitter.outputs.screen_name}}</a>\nPosted: ${{on.twitter.outputs.created_at}}"
+          message: "Hallo @New World Gamer, hier sind Neuigkeiten für dich\n\n${{on.twitter.outputs.full_text}}\n\nQuelle: @[${{on.twitter.outputs.screen_name}}](http://twitter.com/{{on.twitter.outputs.screen_name}}) via Twitter.com\nPosted: ${{on.twitter.outputs.created_at}}"
