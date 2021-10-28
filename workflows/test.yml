@@ -2,14 +2,20 @@ on:
   rss:
     url: https://hnrss.org/newest?points=300
 jobs:
-  ifttt:
-    name: Make a Request to IFTTT
+  send-to-discord:
+    name: Send To Discord
     runs-on: ubuntu-latest
     steps:
-      - uses: actionsflow/ifttt-webhook-action@v1
+      - uses: hugoalh/GitHubAction.SendToDiscord@v2.0.0
+        with:
         with:
           event: notice
-          key: ${{ secrets.IFTTT_KEY }}
           value1: ${{on.rss.outputs.title}}
           value2: ${{on.rss.outputs.contentSnippet}}
           value3: ${{on.rss.outputs.link}}
+          webhook_id: ${{secrets.DISCORD_WEBHOOK_ID}}
+          webhook_token: ${{secrets.DISCORD_WEBHOOK_TOKEN}}
+          variable_join: "."
+          variable_prefix: "%"
+          variable_suffix: "%"
+          message_text: "Hallo @New World Gamer, hier sind Neuigkeiten für dich\n "${{on.rss.outputs.contentSnippet}}" ...."
