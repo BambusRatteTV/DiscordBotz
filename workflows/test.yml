@@ -18,4 +18,4 @@ jobs:
           variable_join: "."
           variable_prefix: "%"
           variable_suffix: "%"
-          message_text: "Hallo @New World Gamer, hier sind Neuigkeiten für dich\n "${{on.rss.outputs.contentSnippet}}" ...."
+          message_text: "Hallo @New World Gamer, hier sind Neuigkeiten für dich\n '${{on.rss.outputs.contentSnippet}}' ...."
