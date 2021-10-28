@@ -1,6 +1,15 @@
-- name: send message
-  uses: appleboy/discord-action@master
-  with:
-    webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
-    webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
-    message: The event triggered first step. Hier könnte aber auch was anderes stehen :(
+on:
+  rss:
+    url: https://hnrss.org/newest?points=300
+jobs:
+  ifttt:
+    name: Make a Request to IFTTT
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actionsflow/ifttt-webhook-action@v1
+        with:
+          event: notice
+          key: ${{ secrets.IFTTT_KEY }}
+          value1: ${{on.rss.outputs.title}}
+          value2: ${{on.rss.outputs.contentSnippet}}
+          value3: ${{on.rss.outputs.link}}
