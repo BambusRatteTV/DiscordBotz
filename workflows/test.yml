@@ -8,7 +8,6 @@ jobs:
     steps:
       - uses: hugoalh/GitHubAction.SendToDiscord@v2.0.0
         with:
-        with:
           event: notice
           value1: ${{on.rss.outputs.title}}
           value2: ${{on.rss.outputs.contentSnippet}}
