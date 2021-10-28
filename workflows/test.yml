@@ -9,8 +9,8 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-        name: discord
-      - uses: sebastianpopp/discord-action@v1.0
+      - name: discord
+        uses: sebastianpopp/discord-action@v1.0
         with:
           event: notice
           value1: ${{on.rss.outputs.title}}
