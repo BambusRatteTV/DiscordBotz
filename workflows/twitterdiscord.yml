@@ -1,4 +1,5 @@
-twitter:
+on:
+ twitter:
   api: statuses/user_timeline
   auth:
    consumer_key: ${{ secrets.TWITTER_CONSUMER_KEY }}
@@ -8,7 +9,7 @@ twitter:
   params:
     screen_name: playnewworldde
 
-send-to-discord:
+ send-to-discord:
   name: Send To Discord
   runs-on: ubuntu-latest
   steps:
