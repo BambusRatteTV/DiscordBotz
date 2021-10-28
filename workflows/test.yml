@@ -1,8 +1,9 @@
 on:
   schedule:
   - cron: "*/2 * * * *"
-      rss:
-       url: https://www.pcgames.de/feed.cfm?menu_alias=News/
+  rss:
+    url: https://www.pcgames.de/feed.cfm?menu_alias=News/
+
 jobs:
   deploy:
     name: Deploy
