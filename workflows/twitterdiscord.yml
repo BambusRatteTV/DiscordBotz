@@ -21,4 +21,7 @@ jobs:
         with:
           event: notice
           webhook: ${{secrets.DISCORD_WEBHOOK}}
-          message: "Hallo @New World Gamer, hier sind Neuigkeiten für dich\n\n${{on.twitter.outputs.full_text}}\nhttp://twitter.com/${{on.twitter.outputs.screen_name}}/status/${{on.twitter.outputs.id_str}}\nQuelle: ${{on.twitter.outputs.screen_name}} via Twitter.com\nPosted: ${{on.twitter.outputs.created_at}}"
+          username: ${{on.twitter.outputs.screen_name}}
+          text: ${{on.twitter.outputs.full_text}}
+          statusid: ${{on.twitter.outputs.id_str}}
+          message: "Hallo @New World Gamer, hier sind Neuigkeiten für dich\n\n{{text}}\nhttp://twitter.com/{{username}}/status/{{statusid}}\nQuelle: {{username}} via Twitter.com\nPosted: ${{on.twitter.outputs.created_at}}"
