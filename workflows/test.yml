@@ -1,6 +1,6 @@
 on:
   rss:
-    url: https://www.pcgames.de/feed.cfm?product=267858&postfix=news
+    url: https://www.pcgames.de/feed.cfm?menu_alias=News/
 jobs:
   deploy:
     name: Deploy
