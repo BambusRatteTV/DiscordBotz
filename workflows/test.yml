@@ -29,6 +29,5 @@ jobs:
             
             ${{text}}
             
-            http://twitter.com/'${{username}}'/status/'${{statusid}}'
-            Quelle: '${{username}}' via Twitter.com
-            Posted: ${{on.twitter.outputs.created_at}}
+            http://twitter.com/'${{on.twitter.outputs.screen_name}}'/status/'${{on.twitter.outputs.id_str}}'
+            Quelle: '${{on.twitter.outputs.screen_name}}' via Twitter.com
