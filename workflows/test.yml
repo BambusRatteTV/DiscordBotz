@@ -28,5 +28,6 @@ jobs:
             ${{on.twitter.outputs.full_text}}
             
             :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:            
-            http://twitter.com/${{on.twitter.outputs.screen_name}}/status/${{on.twitter.outputs.id_str}}
-            Quelle: [http://twitter.com/${{on.twitter.outputs.user.screen_name}}](${{on.twitter.outputs.user.screen_name}}) via Twitter.com
+            http://twitter.com/${{on.twitter.outputs.user.screen_name}}/status/${{on.twitter.outputs.id_str}}
+            Quelle: [http://twitter.com/${{on.twitter.outputs.user.screen_name}}]((${{on.twitter.outputs.user.screen_name}})) via Twitter.com
+            ${{on.twitter.outputs.user.url}}
