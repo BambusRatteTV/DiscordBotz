@@ -10,7 +10,7 @@ on:
     screen_name: playnewworldde
     exclude_replies: true,
     include_rts: false,
-
+    tweet_mode: extended,
 jobs:
   deploy:
     name: Deploy
@@ -21,7 +21,11 @@ jobs:
         with:
           event: notice
           webhook: ${{secrets.DISCORD_WEBHOOK}}
-          username: ${{on.twitter.outputs.screen_name}}
-          text: ${{on.twitter.outputs.full_text}}
-          statusid: ${{on.twitter.outputs.id_str}}
-          message: "Moin, hier sind Neuigkeiten für dich!\n\n${{text}}\nhttp://twitter.com/${{username}}/status/${{statusid}}\nQuelle: ${{username}} via Twitter.com\nPosted: ${{on.twitter.outputs.created_at}}"
+          message: |
+            Moin, hier sind Neuigkeiten für dich <@&591552745123872768> !
+            
+            ${{on.twitter.outputs.full_text}}
+            
+            - Quelle: http://twitter.com/${{on.twitter.outputs.user.screen_name}}
+            
+           
