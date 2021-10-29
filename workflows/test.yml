@@ -1,0 +1,27 @@
+on:
+ twitter:
+  api: statuses/user_timeline
+  auth:
+   consumer_key: ${{ secrets.TWITTER_CONSUMER_KEY }}
+   consumer_secret: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+   access_token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+   access_token_secret: ${{ secrets.TWITTER_ACCESS_SECRET }}
+  params:
+    screen_name: the_unsk1lled
+    exclude_replies: true,
+    include_rts: false,
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: discord-action
+        uses: sebastianpopp/discord-action@v1.0
+        with:
+          event: notice
+          webhook: ${{secrets.DISCORD_WEBHOOK}}
+          username: ${{on.twitter.outputs.screen_name}}
+          text: ${{on.twitter.outputs.full_text}}
+          statusid: ${{on.twitter.outputs.id_str}}
+          message: "Moin, hier sind Neuigkeiten für dich!\n\n${{text}}\nhttp://twitter.com/${{username}}/status/${{statusid}}\nQuelle: ${{username}} via Twitter.com\nPosted: ${{on.twitter.outputs.created_at}}"
