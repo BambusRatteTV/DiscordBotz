@@ -24,4 +24,11 @@ jobs:
           username: ${{on.twitter.outputs.screen_name}}
           text: ${{on.twitter.outputs.full_text}}
           statusid: ${{on.twitter.outputs.id_str}}
-          message: "Moin, hier sind Neuigkeiten für dich!\n\n${{text}}\nhttp://twitter.com/${{username}}/status/${{statusid}}\nQuelle: ${{username}} via Twitter.com\nPosted: ${{on.twitter.outputs.created_at}}"
+          message: |
+            Moin, hier sind Neuigkeiten für dich!
+            
+            ${{text}}
+            
+            http://twitter.com/'${{username}}'/status/'${{statusid}}'
+            Quelle: '${{username}}' via Twitter.com
+            Posted: ${{on.twitter.outputs.created_at}}
