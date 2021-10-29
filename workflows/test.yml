@@ -22,7 +22,7 @@ jobs:
           event: notice
           webhook: ${{secrets.DISCORD_WEBHOOK}}
           message: |
-            Moin, hier sind Neuigkeiten für dich '\@New World Gamer' !
+            Moin, hier sind Neuigkeiten für dich \\@New World Gamer" !
             :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
             http://twitter.com/${{on.twitter.outputs.user.screen_name}}/status/${{on.twitter.outputs.id_str}}
             :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:            
