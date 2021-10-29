@@ -21,13 +21,10 @@ jobs:
         with:
           event: notice
           webhook: ${{secrets.DISCORD_WEBHOOK}}
-          username: ${{on.twitter.outputs.screen_name}}
-          text: ${{on.twitter.outputs.full_text}}
-          statusid: ${{on.twitter.outputs.id_str}}
           message: |
             Moin, hier sind Neuigkeiten für dich!
-            
-            ${{text}}
-            
-            http://twitter.com/'${{on.twitter.outputs.screen_name}}'/status/'${{on.twitter.outputs.id_str}}'
-            Quelle: '${{on.twitter.outputs.screen_name}}' via Twitter.com
+            :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
+            ${{on.twitter.outputs.full_text}}
+            :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:            
+            http://twitter.com/${{on.twitter.outputs.screen_name}}/status/${{on.twitter.outputs.id_str}}
+            Quelle: ${{on.twitter.outputs.screen_name}} via Twitter.com
