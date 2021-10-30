@@ -19,7 +19,7 @@ jobs:
           embeds:
              color: 13107455
              description: '${{on.rss.outputs.content}}'
-             url: '<${{on.rss.outputs.link}}>'
+             url: '${{on.rss.outputs.link}}'
              footer:
                text: '- Posted: ${{on.rss.outputs.pubDate}}'
           components:
@@ -28,6 +28,6 @@ jobs:
             - type: 2
               style: 5
               label: 'Read more..'
-              url: '<${{on.rss.outputs.link}}>'
+              url: '${{on.rss.outputs.link}}'
 
 
