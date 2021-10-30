@@ -4,7 +4,7 @@ on:
       - https://www.pcgames.de/feed.cfm?menu_alias=home/
       - https://www.buffed.de/feed.cfm?menu_alias=home/
     config:
-      limit: 30
+      limit: 6
     
 jobs:
   deploy:
@@ -20,7 +20,8 @@ jobs:
           message: |          
             ** ${{on.rss.outputs.title}} **
             
-            ${{on.rss.outputs.content}} [${{on.rss.outputs.link}}](Weiterlesen)
+            ${{on.rss.outputs.content}}
+            Weiterlesen: ${{on.rss.outputs.link}}
             
             - Posted: ${{on.rss.outputs.pubDate}}
             - Quelle: <${{on.rss.outputs.link}}>
