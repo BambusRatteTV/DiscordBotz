@@ -6,7 +6,7 @@ on:
       - https://gameswelt.de/feeds/news/rss.xml
       - https://www.gamestar.de/news/rss/news.rss
     config:
-      limit: 10
+      limit: 35
     
 jobs:
   deploy:
