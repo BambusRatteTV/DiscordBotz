@@ -15,7 +15,7 @@ jobs:
         uses: rjstone/discord-webhook-notify@v1.0.4
         with:
           webhookUrl: ${{secrets.DISCORD_WEBHOOK2}}
-          content: **${{on.rss.outputs.title}}**
+          content: "**${{on.rss.outputs.title}}**"
           embeds:
              color: 13107455
              description: ${{on.rss.outputs.content}} ... [Read more..](<${{on.rss.outputs.link}}>)
