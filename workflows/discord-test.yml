@@ -21,7 +21,7 @@ jobs:
              description: ${{on.rss.outputs.content}}
              url: ${{on.rss.outputs.link}}
              footer:
-               text: - Posted: ${{on.rss.outputs.pubDate}}
+                text: "- Posted: ${{on.rss.outputs.pubDate}}"
           components:
           - type: 1
             components:
