@@ -18,7 +18,7 @@ jobs:
           content: '**${{on.rss.outputs.title}}**'
           embeds:
              color: 13107455
-             description: '${{on.rss.outputs.content}} ... [Read more..](<${{on.rss.outputs.link}}>)'
+             description: '${{on.rss.outputs.content}}'
              url: '<${{on.rss.outputs.link}}>'
              footer:
                text: '- Posted: ${{on.rss.outputs.pubDate}}'
