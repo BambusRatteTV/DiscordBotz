@@ -3,6 +3,7 @@ on:
     url:
       - https://www.pcgames.de/feed.cfm?menu_alias=home/
       - https://www.buffed.de/feed.cfm?menu_alias=home/
+      - https://gameswelt.de/feeds/news/rss.xml
     config:
       limit: 8
     
