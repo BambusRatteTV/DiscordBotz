@@ -15,7 +15,7 @@ jobs:
         uses: sebastianpopp/discord-action@v1.0
         with:
           event: notice
-          webhook: ${{secrets.DISCORD_WEBHOOK}}
+          webhook: ${{secrets.DISCORD_WEBHOOK2}}
           message: |          
             ** ${{on.rss.outputs.title}} **
             
