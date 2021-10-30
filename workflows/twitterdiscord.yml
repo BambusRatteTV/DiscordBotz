@@ -24,8 +24,8 @@ jobs:
           message: |
             Moin, hier sind Neuigkeiten für dich <@&591552745123872768> !
             
-            ${{on.twitter.outputs.full_text}}
+            <${{on.twitter.outputs.full_text}}>
             
-            - Quelle: http://twitter.com/${{on.twitter.outputs.user.screen_name}}
+            - Quelle: <http://twitter.com/${{on.twitter.outputs.user.screen_name}}>
             
            
