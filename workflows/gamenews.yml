@@ -4,7 +4,7 @@ on:
       - https://www.pcgames.de/feed.cfm?menu_alias=home/
       - https://www.giga.de/rss/giga.rss
     config:
-      limit: 11
+      limit: 15
     
 jobs:
   deploy:
