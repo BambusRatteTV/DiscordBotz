@@ -4,14 +4,14 @@ on:
       - https://www.pcgames.de/feed.cfm?menu_alias=home/
       - https://www.giga.de/rss/giga.rss
     config:
-      limit: 32
+      limit: 33
     
 jobs:
   send-to-discord:
     name: "Send To Discord"
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "hugoalh/GitHubAction.SendToDiscord@v3.0.0"
+      - uses: "hugoalh/GitHubAction.SendToDiscord@v3.1.1"
         with:
           configuration: ".github/workflow/send-to-discord.json"
           webhook_id: "${{secrets.DISCORD_WEBHOOK_ID2}}"
