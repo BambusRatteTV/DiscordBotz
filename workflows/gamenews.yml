@@ -4,7 +4,7 @@ on:
       - https://www.pcgames.de/feed.cfm?menu_alias=home/
       - https://www.giga.de/rss/giga.rss
     config:
-      limit: 2
+      limit: 8
     
 jobs:
   deploy:
@@ -17,15 +17,14 @@ jobs:
           event: notice
           webhook: ${{secrets.DISCORD_WEBHOOK2}}
           message: |
-            Moin, gibt wieder neue GameNews für dich!
-            
-            ${{on.rss.outputs.title}}
-            
+          
+           >':newspaper:' ** ${{on.rss.outputs.title}} **
+           
             ${{on.rss.outputs.contentSnippet}}
             
             
             - Posted: ${{on.rss.outputs.pubDate}}
-            - Quelle: ${{on.rss.outputs.link}}
+            - Quelle: <${{on.rss.outputs.link}}>
 
 
 
