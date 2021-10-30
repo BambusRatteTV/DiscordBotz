@@ -23,9 +23,9 @@ jobs:
           webhook: ${{secrets.DISCORD_WEBHOOK}}
           message: |
             Moin, hier sind Neuigkeiten für dich <@&591552745123872768> !
-            :white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square:
-            <${{on.twitter.outputs.full_text}}>
-            :white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square:
+            
+            ${{on.twitter.outputs.full_text}}
+            
             - Quelle: <http://twitter.com/${{on.twitter.outputs.user.screen_name}}>
             
            
