@@ -17,8 +17,7 @@ jobs:
           event: notice
           webhook: ${{secrets.DISCORD_WEBHOOK2}}
           embed: TESTNACHRICHT
-          message: |
-          
+          message: |          
             ** ${{on.rss.outputs.title}} **
            :white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square:
             <${{on.rss.outputs.content}}>
