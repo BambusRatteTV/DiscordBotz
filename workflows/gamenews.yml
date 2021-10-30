@@ -3,9 +3,9 @@ on:
     url:
       - https://www.pcgames.de/feed.cfm?menu_alias=home/
       - https://www.buffed.de/feed.cfm?menu_alias=home/
-      - https://gameswelt.de/feeds/news/rss.xml
+      - https://gameswelt.de/feeds/news/
     config:
-      limit: 8
+      limit: 10
     
 jobs:
   deploy:
