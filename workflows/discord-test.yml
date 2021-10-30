@@ -7,27 +7,16 @@ on:
       limit: 30
     
 jobs:
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
+  send-to-discord:
+    name: "Send To Discord"
+    runs-on: "ubuntu-latest"
     steps:
-      - name: Discord Webhook Notify
-        uses: rjstone/discord-webhook-notify@v1.0.4
+      - uses: "hugoalh/GitHubAction.SendToDiscord@v3.0.0"
         with:
-          webhookUrl: ${{secrets.DISCORD_WEBHOOK2}}
-          content: ${{on.rss.outputs.title}}
-          embeds:
-             color: 13107455
-             description: ${{on.rss.outputs.content}}
-             url: ${{on.rss.outputs.link}}
-             footer:
-                text: "- Posted: ${{on.rss.outputs.pubDate}}"
-          components:
-          - type: 1
-            components:
-            - type: 2
-              style: 5
-              label: Read more..
-              url: ${{on.rss.outputs.link}}
-
-
+          configuration: ".github/workflow/send-to-discord.json"
+          webhook_id: "${{secrets.DISCORD_WEBHOOK_ID2}}"
+          webhook_token: "${{secrets.DISCORD_WEBHOOK_TOKEN2}}"
+          variable_join: "."
+          # variable_list_external:
+          variable_prefix: "%"
+          variable_suffix: "%"
