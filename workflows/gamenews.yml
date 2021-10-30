@@ -20,7 +20,7 @@ jobs:
           message: |          
             ** ${{on.rss.outputs.title}} **
             
-            ${{on.rss.outputs.content}} <[${{on.rss.outputs.link}}](Weiterlesen)>
+            ${{on.rss.outputs.content}} [${{on.rss.outputs.link}}](Weiterlesen)
             
             - Posted: ${{on.rss.outputs.pubDate}}
             - Quelle: <${{on.rss.outputs.link}}>
