@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: "hugoalh/GitHubAction.SendToDiscord@v3.1.1"
         with:
-          configuration: ".github/workflow/send-to-discord.json"
+          configuration: ".github/workflows/send-to-discord.json"
           webhook_id: "${{secrets.DISCORD_WEBHOOK_ID2}}"
           webhook_token: "${{secrets.DISCORD_WEBHOOK_TOKEN2}}"
           variable_join: "."
