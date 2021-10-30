@@ -1,0 +1,32 @@
+on:
+  rss:
+    url:
+      - https://www.pcgames.de/feed.cfm?menu_alias=home/
+      - https://www.giga.de/rss/giga.rss
+    config:
+      limit: 15
+    
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: discord-action
+        uses: sebastianpopp/discord-action@v1.0
+        with:
+          event: notice
+          webhook: ${{secrets.DISCORD_WEBHOOK2}}
+          embed: TESTNACHRICHT
+          message: |
+          
+            ** ${{on.rss.outputs.title}} **
+           :white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square:
+            <${{on.rss.outputs.content}}>
+           :white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square::white_small_square:
+            - Posted: ${{on.rss.outputs.pubDate}}
+            - Quelle: <${{on.rss.outputs.link}}>
+
+
+
+
+
