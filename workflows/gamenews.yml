@@ -15,8 +15,7 @@ jobs:
         uses: sebastianpopp/discord-action@v1.0
         with:
           event: notice
-          webhook: ${{secrets.DISCORD_WEBHOOK2}}
-          embed: TESTNACHRICHT
+          webhook: ${{secrets.DISCORD_WEBHOOK}}
           message: |          
             ** ${{on.rss.outputs.title}} **
             
