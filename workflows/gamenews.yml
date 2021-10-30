@@ -1,0 +1,33 @@
+on:
+  rss:
+    url:
+      - https://www.pcgames.de/feed.cfm?menu_alias=home/
+      - https://www.giga.de/rss/giga.rss
+    config:
+      limit: 2
+    
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: discord-action
+        uses: sebastianpopp/discord-action@v1.0
+        with:
+          event: notice
+          webhook: ${{secrets.DISCORD_WEBHOOK2}}
+          message: |
+            Moin, gibt wieder neue GameNews für dich!
+            
+            ${{on.rss.outputs.title}}
+            
+            ${{on.rss.outputs.contentSnippet}}
+            
+            
+            - Posted: ${{on.rss.outputs.pubDate}}
+            - Quelle: ${{on.rss.outputs.link}}
+
+
+
+
+
