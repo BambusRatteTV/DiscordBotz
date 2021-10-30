@@ -20,7 +20,7 @@ jobs:
             ** ${{on.rss.outputs.title}} **
             
             ${{on.rss.outputs.content}}
-            Weiterlesen: ${{on.rss.outputs.link}}
+            Weiterlesen: <${{on.rss.outputs.link}}>
             
             - Posted: ${{on.rss.outputs.pubDate}}
             - Quelle: <${{on.rss.outputs.link}}>
