@@ -19,7 +19,7 @@ jobs:
           event: notice
           webhook: ${{secrets.DISCORD_WEBHOOK2}}
           message: |          
-            ▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️
+            ____________________
             **${{on.rss.outputs.title}}**
             
             ${{on.rss.outputs.content}}
