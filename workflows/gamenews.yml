@@ -26,7 +26,6 @@ jobs:
             Weiterlesen: <${{on.rss.outputs.link}}>
             
             - Posted: ${{on.rss.outputs.pubDate}}
-            - Quelle: <${{on.rss.outputs.link}}>
              
               
               
