@@ -22,8 +22,7 @@ jobs:
         with:
           event: notice
           webhook: ${{secrets.DISCORD_WEBHOOK}}
-          message: |
-            _______________________________
+          message: |            
             Moin, hier sind Neuigkeiten für dich!
             
             ${{on.twitter.outputs.full_text}}
